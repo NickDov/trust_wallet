@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:trust_wallet_desktop/features/auth/presentation/pincode.dart/domain/error_enum.dart';
+import 'package:trust_wallet_desktop/features/auth/presentation/pincode/domain/error_enum.dart';
 
 import '../../../../app_data/app_data.dart';
 import '../../../widgets/custom_elevated_button.dart';

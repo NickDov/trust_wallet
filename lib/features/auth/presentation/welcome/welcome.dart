@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:trust_wallet_desktop/app_data/app_data.dart';
 
 import '../../../widgets/custom_elevated_button.dart';
@@ -133,6 +134,8 @@ class _WelcomeScreenState extends WelcomeBloc {
             onPress: () => setState(() {
               if (selectedScreen < 3) {
                 selectedScreen++;
+              } else {
+                context.push(AppData.routes.backupScreen);
               }
             }),
           ),

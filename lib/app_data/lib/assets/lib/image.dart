@@ -42,6 +42,13 @@ class ImageCollection {
         fit: fit ?? BoxFit.contain,
       );
 
+  Image backup({double? width, double? height, BoxFit? fit}) => Image.asset(
+        _name('images/backup.png'),
+        width: width,
+        height: height,
+        fit: fit ?? BoxFit.contain,
+      );
+
   Image crypto({String? value, double? width, double? height, BoxFit? fit}) =>
       Image.asset(
         _name('crypto/$value.png'),

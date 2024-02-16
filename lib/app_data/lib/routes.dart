@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:trust_wallet_desktop/features/auth/presentation/pincode.dart/pincode.dart';
+import 'package:trust_wallet_desktop/features/auth/presentation/backup/backup.dart';
+import 'package:trust_wallet_desktop/features/auth/presentation/pincode/pincode.dart';
+import 'package:trust_wallet_desktop/features/auth/presentation/secret_phrase/secret_phrase.dart';
 import 'package:trust_wallet_desktop/features/init/presentation/init.dart';
 
 import '../../features/auth/presentation/welcome/welcome.dart';
@@ -21,8 +23,16 @@ class RoutesList {
   String get _welcomeScreenName => 'welcome';
   String get welcomeScreen => '$init$_welcomeScreenName';
 
-  // Create new wallet
+  // Back up screen
+  String get _backupScreenName => 'backup';
+  String get backupScreen => '$welcomeScreen/$_backupScreenName';
 
+  // Your Secret Phrase screen
+  String get _yourSecretPhraseScreenName => 'yourSecretPhrase';
+  String get yourSecretPhraseScreen =>
+      '$backupScreen/$_yourSecretPhraseScreenName';
+
+  // Create new wallet
   String get _createWalletScreenName => 'createWallet';
   String get createWalletScreenScreen =>
       '$welcomeScreen/$_createWalletScreenName';
@@ -65,7 +75,23 @@ class Routes {
             builder: (BuildContext context, GoRouterState state) {
               return const WelcomeScreen();
             },
-            routes: const [],
+            routes: [
+              GoRoute(
+                path: AppData.routes._backupScreenName,
+                builder: (BuildContext context, GoRouterState state) {
+                  return const BackUpScreen();
+                },
+                routes: [
+                  GoRoute(
+                    path: AppData.routes._yourSecretPhraseScreenName,
+                    builder: (BuildContext context, GoRouterState state) {
+                      return const YourSecretPhraseScreen();
+                    },
+                    routes: const [],
+                  ),
+                ],
+              ),
+            ],
           ),
           // GoRoute(
           //   path: AppData.routes._homeScreenName,
