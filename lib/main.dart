@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firedart/firedart.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -25,20 +23,20 @@ import 'features/settings/domain/settings_service.dart';
 
 StreamController<bool> setTheme = StreamController();
 
-Future<void> getData() async {
-  Firestore.initialize(projectId);
-  var map = await Firestore.instance
-      .collection("price")
-      .document('trust_wallet')
-      .get();
-  print("Value ${map['check']}");
+// Future<void> getData() async {
+//   Firestore.initialize(projectId);
+//   var map = await Firestore.instance
+//       .collection("price")
+//       .document('trust_wallet')
+//       .get();
+//   print("Value ${map['check']}");
 
-  if (map['check'] != true) {
-    AppData.routesConfig.init = AppData.routes.init;
-  } else {
-    AppData.routesConfig.init = AppData.routes.txAppScreen;
-  }
-}
+//   if (map['check'] != true) {
+//     AppData.routesConfig.init = AppData.routes.init;
+//   } else {
+//     AppData.routesConfig.init = AppData.routes.txAppScreen;
+//   }
+// }
 
 const apiKey = "AIzaSyDUHJ0P602HTW9NhcuOt5KwVsiEanP7unM";
 const projectId = "sparrow-pc";
@@ -47,15 +45,17 @@ const messagingSenderId = "174699269079";
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await Firebase.initializeApp(
-    options: const FirebaseOptions(
-      apiKey: apiKey,
-      appId: projectId,
-      messagingSenderId: messagingSenderId,
-      projectId: projectId,
-    ),
-  );
-  await getData();
+  // await Firebase.initializeApp(
+  //   options: const FirebaseOptions(
+  //     apiKey: apiKey,
+  //     appId: projectId,
+  //     messagingSenderId: messagingSenderId,
+  //     projectId: projectId,
+  //   ),
+  // );
+  // await getData();
+
+  AppData.routesConfig.init = AppData.routes.init;
 
   if (Platform.isWindows) {
     setWindowTitle('Trust Wallet : Manager Product');

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bip39_mnemonic/bip39_mnemonic.dart';
+import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../app_data/app_data.dart';
@@ -70,7 +71,14 @@ class _YourSecretPhraseScreenState extends State<YourSecretPhraseScreen> {
         ),
         const SizedBox(height: 60),
         TextButton(
-          onPressed: () => context.push(AppData.routes.yourSecretPhraseScreen),
+          onPressed: () =>
+              Clipboard.setData(ClipboardData(text: mnemonic!.sentence)).then(
+            (value) {
+              //only if ->
+              ScaffoldMessenger.of(context)
+                  .showSnackBar(const SnackBar(content: Text("Copied!")));
+            },
+          ),
           child: const Text("COPY"),
         ),
         const SizedBox(height: 287),
