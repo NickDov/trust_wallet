@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0.0
+Name=Trust Wallet
+Comment=Trust Wallet : Crypto Wallet
+Exec=trustwal
+Icon=${SNAP}/meta/gui/trustwal.png 
+Terminal=false
+Type=Application

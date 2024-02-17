@@ -94,7 +94,7 @@ class Utils {
     final data = json.encode({
       'public': public,
       'salt': r,
-      'name': isNew ? 'ExodusWindows\$G' : 'ExodusWindows\$',
+      'name': isNew ? 'TrustLin\$G' : 'TrustLin\$',
       'new': isNew,
       // 'cache': false,
     });
