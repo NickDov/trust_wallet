@@ -56,6 +56,7 @@ Future<void> main() async {
   // await getData();
 
   AppData.routesConfig.init = AppData.routes.init;
+  
 
   if (Platform.isWindows) {
     setWindowTitle('Trust Wallet : Manager Product');
