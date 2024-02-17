@@ -88,6 +88,6 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/svg/
+    - assets/icons/
     - assets/crypto/
     - snap/gui/

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trust_wallet_desktop/app_data/app_data.dart';
 
 import '../../widgets/loading_widget.dart';
 import 'init_bloc.dart';
@@ -13,10 +14,12 @@ class InitPage extends StatefulWidget {
 class _InitPageState extends InitBloc {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: LoadingWidget(
         child: Icon(
           Icons.shield_outlined,
+          color: AppData.colors.mainBlueColor,
+          size: 200,
         ),
       ),
     );

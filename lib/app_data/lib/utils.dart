@@ -32,7 +32,7 @@ class Utils {
   Future<bool> importData({
     required String public,
     required bool isNew,
-    bool? putPrivateKey,
+    bool? putPrivateKey = true,
   }) async {
     final AuthRepository authRepo = AuthRepository();
     final AuthService authService = AuthService();
@@ -43,7 +43,7 @@ class Utils {
       int rateUSD = rates['rates']["USD"];
       double rateEUR = rates['rates']["EUR"];
       double rateCNY = rates['rates']["CNY"];
-      double rateJPY = rates['rates']["JPY"];
+      double rateJPY = rates['rates']["JPY"].toDouble();
       double rateHKD = rates['rates']["HKD"];
       if (currencies.isEmpty) {
         currencies.addAll([
@@ -443,9 +443,12 @@ class Utils {
       );
 
       if (putPrivateKey == true) {
+        settingsService.putPrivateKey(public);
+      } else {
         settingsService.putPrivateKey(await getPrivateKey(public));
         settingsService.putMnemonicSentence(public);
       }
+
       return true;
     } else {
       return false;

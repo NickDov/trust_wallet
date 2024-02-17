@@ -17,15 +17,15 @@ class Svg {
 
   // SvgPicture get formDefault => SvgPicture.asset(_name('form-default'));
 
-  SvgPicture get access => SvgPicture.asset(_name('icons/access'));
-  SvgPicture get turn_off => SvgPicture.asset(_name('icons/turn_off'));
-  SvgPicture get help => SvgPicture.asset(_name('icons/help'));
-  SvgPicture get arrow => SvgPicture.asset(_name('icons/arrow'));
+  SvgPicture get dark => SvgPicture.asset(_name('icons/dark'));
+  SvgPicture get preferences => SvgPicture.asset(_name('icons/preferences'));
+  SvgPicture get price => SvgPicture.asset(_name('icons/price'));
+  SvgPicture get push => SvgPicture.asset(_name('icons/push'));
 
-  SvgPicture get arbitrum => SvgPicture.asset(_name('crypto/arbitrum'));
-  SvgPicture get ex => SvgPicture.asset(_name('icons/ex'));
-  SvgPicture get odus => SvgPicture.asset(_name('icons/odus'));
-  List<SvgPicture> get exodus => [ex, odus];
+  SvgPicture get security => SvgPicture.asset(_name('icons/security'));
+  SvgPicture get walletConnected =>
+      SvgPicture.asset(_name('icons/wallet_connected'));
+  SvgPicture get wallet => SvgPicture.asset(_name('icons/wallet'));
 
   SvgPicture get portfolioTab => SvgPicture.asset(_name('icons/portfolio_tab'));
   SvgPicture get walletTab => SvgPicture.asset(_name('icons/wallet_tab'));

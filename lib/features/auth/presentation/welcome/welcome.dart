@@ -142,7 +142,7 @@ class _WelcomeScreenState extends WelcomeBloc {
         ),
         const SizedBox(height: 30),
         TextButton(
-          onPressed: () {},
+          onPressed: () => context.push(AppData.routes.importKeyScreen),
           child: const Text("I already have a wallet"),
         ),
       ],

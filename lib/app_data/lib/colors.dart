@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trust_wallet_desktop/features/settings/domain/settings_service.dart';
 
 // import '../../features/settings/domain/settings_service.dart';
 
@@ -10,9 +11,12 @@ class ColorsCollection {
   //   }
   //   return true;
   // }
+  final SettingsService settingsService = SettingsService();
 
   /// Цвет фона страниц
-  Color get backgroundColor => Colors.white; // const Color(0xffC5C5C5)
+  Color get backgroundColor => !settingsService.getTheme()!
+      ? Colors.black
+      : Colors.white; // const Color(0xffC5C5C5)
   Color get backgroundBlackColor => Colors.black;
 
   /// Цвет фона страниц, который чуть темнее, чем [backgroundColor]

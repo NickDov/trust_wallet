@@ -76,7 +76,7 @@ class _LoadingWidgetState extends State<LoadingWidget>
                   ),
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
-                    radius: 50 * animation!.value,
+                    radius: 200 * animation!.value,
                     child: widget.child,
                   ),
                 ),

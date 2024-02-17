@@ -115,7 +115,13 @@ class _YourSecretPhraseScreenState extends State<YourSecretPhraseScreen> {
               const SizedBox(height: 40),
               CustomElevatedButton(
                 text: "CONTINUE",
-                onPress: () {},
+                onPress: () {
+                  List<String> mnemonicList = mnemonic!.sentence.split(' ');
+                  context.push(
+                    AppData.routes.verifyPhraseScreen,
+                    extra: mnemonicList,
+                  );
+                },
               ),
             ],
           ),

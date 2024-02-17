@@ -49,6 +49,34 @@ class ImageCollection {
         fit: fit ?? BoxFit.contain,
       );
 
+  Image home({double? width, double? height, BoxFit? fit}) => Image.asset(
+        _name('images/home.png'),
+        width: width,
+        height: height,
+        fit: fit ?? BoxFit.contain,
+      );
+
+  Image buy({double? width, double? height, BoxFit? fit}) => Image.asset(
+        _name('icons/buy.png'),
+        width: width,
+        height: height,
+        fit: fit ?? BoxFit.contain,
+      );
+
+  Image receive({double? width, double? height, BoxFit? fit}) => Image.asset(
+        _name('icons/receive.png'),
+        width: width,
+        height: height,
+        fit: fit ?? BoxFit.contain,
+      );
+
+  Image send({double? width, double? height, BoxFit? fit}) => Image.asset(
+        _name('icons/send.png'),
+        width: width,
+        height: height,
+        fit: fit ?? BoxFit.contain,
+      );
+
   Image crypto({String? value, double? width, double? height, BoxFit? fit}) =>
       Image.asset(
         _name('crypto/$value.png'),
